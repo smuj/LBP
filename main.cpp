@@ -27,6 +27,8 @@ void HistConvertContinuous(Mat inputFrame, Mat outputFrame, int blockSize,bool j
                 }
             }
             int h,hMax=0,hMaxVal=0;
+            //we go from 1 rather than 0 so that code 0 is ignored
+            //because it usually overwhelms the other ones
             for (h=1;h<256;h++) {
                 if (hist[h]>hMaxVal) {
                     hMax=h;
@@ -59,6 +61,8 @@ void HistConvert(Mat inputFrame, Mat outputFrame, int blockSize,bool justHue) {
             }
 
             int h,hMax=0,hMaxVal=0;
+            //we go from 1 rather than 0 so that code 0 is ignored
+            //because it usually overwhelms the other ones
             for (h=1;h<256;h++) {
                 if (hist[h]>hMaxVal) {
                     hMax=h;
